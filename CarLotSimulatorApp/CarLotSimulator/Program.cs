@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Runtime.CompilerServices;
+using System.Xml.Schema;
 
 namespace CarLotSimulator
 {
@@ -6,6 +9,61 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
+            //Creating instance for CarLot
+            CarLot carLot = new CarLot();
+
+            //Instantiate 3 cars with different ways of setting properties
+            //Car 1
+            Car car1 = new Car
+
+            {
+                Year = 2000,
+                Make = "Toyota",
+                Model = "Camry",
+                EngineNoise = "Vroom Vroom",
+                HonkNoise = "Beep Beep",
+                IsDriveable = true,
+            };
+
+            //Car 2
+            Car car2 = new Car();
+            car2.Year = 2021;
+            car2.Make = "Honda";
+            car2.Model = "Civic";
+            car2.EngineNoise = "Zoom Zoom";
+            car2.HonkNoise = "Honk Honk";
+            car2.IsDriveable = false;
+
+            //Car 3
+            Car car3 = new Car
+            {
+                Year = 2022,
+                Make = "Ford",
+                Model = "Mustang",
+                EngineNoise = "Rumble Rumble",
+                HonkNoise = "BEEP BEEP",
+                IsDriveable = true,
+            };
+
+            //Calling MakeEngineNoise and HonkNoise
+            car1.MakeEngineNoise(car1.EngineNoise);
+            car1.MakeHonkNoise(car1.HonkNoise);
+
+            car2.MakeEngineNoise(car2.EngineNoise);
+            car2.MakeHonkNoise(car2.HonkNoise);
+
+            car3.MakeEngineNoise(car3.EngineNoise);
+            car3.MakeHonkNoise(car3.HonkNoise);
+
+            //Add cars to list
+            carLot.AddCar(car1);
+            carLot.AddCar(car2);
+            carLot.AddCar(car3);
+
+            //Printing car details
+            carLot.PrintCars();
+
+
             //TODO
 
             //Create a seperate class file called Car
