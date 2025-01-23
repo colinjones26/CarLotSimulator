@@ -14,36 +14,18 @@ namespace CarLotSimulator
 
             //Instantiate 3 cars with different ways of setting properties
             //Car 1
-            Car car1 = new Car
-
-            {
-                Year = 2000,
-                Make = "Toyota",
-                Model = "Camry",
-                EngineNoise = "Vroom Vroom",
-                HonkNoise = "Beep Beep",
-                IsDriveable = true,
-            };
+            Car car1 = new Car(2000, "Toyota", "Camry", "Vroom Vroom", "Beep Beep", true);
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}");
 
             //Car 2
-            Car car2 = new Car();
-            car2.Year = 2021;
-            car2.Make = "Honda";
-            car2.Model = "Civic";
-            car2.EngineNoise = "Zoom Zoom";
-            car2.HonkNoise = "Honk Honk";
-            car2.IsDriveable = false;
+            Car car2 = new Car(2021, "Honda", "Civic", "Zoom Zoom", "Honk Honk", false);
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}");
+
 
             //Car 3
-            Car car3 = new Car
-            {
-                Year = 2022,
-                Make = "Ford",
-                Model = "Mustang",
-                EngineNoise = "Rumble Rumble",
-                HonkNoise = "BEEP BEEP",
-                IsDriveable = true,
-            };
+            Car car3 = new Car(2022, "Ford", "Mustang", "Rumble Rumble", "BEEP BEEP", true);
+            Console.WriteLine($"Number of cars in the lot: {CarLot.numberOfCars}");
+
 
             //Calling MakeEngineNoise and HonkNoise
             car1.MakeEngineNoise(car1.EngineNoise);
@@ -62,6 +44,7 @@ namespace CarLotSimulator
 
             //Printing car details
             carLot.PrintCars();
+        
 
 
             //TODO

@@ -17,6 +17,20 @@ namespace CarLotSimulator
         public string HonkNoise { get; set; }
         public bool IsDriveable { get; set; }
 
+        //Constructor for Car class
+        public Car(int year, string make, string model, string engineNoise, string honkNoise, bool isDriveable)
+        {
+            Year = year;
+            Make = make;
+            Model = model;
+            EngineNoise = engineNoise;
+            HonkNoise = honkNoise;
+            IsDriveable = isDriveable;
+
+            //Increment static field numberOfCars with new car created
+            CarLot.numberOfCars++;
+        }
+
         public void MakeEngineNoise(string noise)
         {
             EngineNoise = noise;
@@ -30,3 +44,4 @@ namespace CarLotSimulator
         }
     }
 }
+

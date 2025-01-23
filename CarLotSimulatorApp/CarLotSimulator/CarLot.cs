@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace CarLotSimulator
 {
-    internal class CarLot
+   
+    public class CarLot
     {
+
+        //Static field tracking number of cars
+        public static int numberOfCars = 0;
+
         //Property to hold a list of cars
         public List<Car> Cars { get; set; }
 
